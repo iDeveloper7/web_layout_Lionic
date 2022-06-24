@@ -47,10 +47,14 @@ img {
   max-width: 100%;
 }
 
+:root {
+  --gap: 30px;
+}
+
 /*global*/
 
 body {
-  min-width: 1200px;
+  min-width: 320px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
@@ -115,7 +119,7 @@ body {
 .container {
   margin: 0 auto;
   padding: 0 15px;
-  width: 1200px;
+  max-width: 1200px;
 }
 
 .section-title {
@@ -125,7 +129,7 @@ body {
 
 .section-descr {
   text-align: center;
-  font: 400 16px / 22px 'Open Sans',sans-serif;
+  font: 400 16px / 22px 'Open Sans', sans-serif;
   color: #787878;
 }
 
@@ -135,7 +139,7 @@ body {
 }
 
 .section-offset {
-  padding: 87px 0 160px;
+  padding: 76px 0 168px;
   border-bottom: 1px solid #dadada;
 }
 
@@ -188,17 +192,19 @@ body {
 
 /*header*/
 .header {
+  margin-bottom: 13px;
   border-bottom: 1px solid #c4c4c4;
   background-color: #fff;
 }
 
 .header__container {
-  padding: 36px 0;
+  padding: 27px 16px;
   align-items: center;
 }
 
 .header__logo {
   margin-right: auto;
+  padding-top: 7px;
 }
 
 .header__nav {
@@ -213,19 +219,21 @@ body {
   padding: 15px 35px;
 }
 
+.burger {
+  display: none;
+}
+
 /*hero*/
 
 .hero {
-  background: url("/img/hero_bg-image.jpg") no-repeat center center;
-  background-size: cover;
-
+  background: url("/img/hero_bg-image.jpg") center center / cover no-repeat;
 }
 
 .hero__content {
   flex-direction: column;
-  padding: 100px 0 150px;
   align-items: flex-start;
-  max-width: 50%;
+  padding: 101px 0px 144px;
+  width: 50%;
 }
 
 .hero__title {
@@ -235,6 +243,7 @@ body {
 
 .hero__descr {
   margin: 0 0 34px;
+  max-width: 471px;
   font: 400 16px / 155% 'Open Sans', sans-serif;
   color: #787878;
 }
@@ -255,8 +264,7 @@ body {
   font: 400 11px / 155% 'Open Sans', sans-serif;
   text-transform: uppercase;
   color: #787878;
-  background: url("/img/guard-logo.svg") no-repeat left center;
-  background-size: contain;
+  background: url("/img/guard-logo.svg") left center / contain no-repeat;
 }
 
 /*services*/
@@ -278,7 +286,7 @@ body {
   flex-flow: column wrap;
   align-items: center;
   padding: 60px 30px;
-  width: 270px;
+  width: calc((100% - var(--gap) * 3) / 4);
   border: 1px solid #e4e4e4;
   border-radius: 5px;
   transition: border-color 0.3s ease-in-out,
@@ -286,7 +294,7 @@ body {
 }
 
 .services__item:not(:nth-child(4n)) {
-  margin-right: 30px;
+  margin-right: var(--gap);
 }
 
 .services__item:hover {
@@ -306,6 +314,7 @@ body {
 
 .services__item-title {
   margin: 0 0 15px;
+  text-align: center;
   transition: color 0.3s ease-in-out;
 }
 
@@ -314,7 +323,7 @@ body {
 }
 
 .services__icon {
-  margin: 0 0 25px;
+  margin: 0 0 30px;
 }
 
 .services__icon-color {
@@ -337,12 +346,11 @@ body {
 }
 
 .articles__item {
-  width: 570px;
-  /*margin-bottom: 30px;*/
+  width: calc((100% - var(--gap)) / 2);
 }
 
 .articles__item:nth-child(-n+2) {
-  margin-bottom: 30px;
+  margin-bottom: 27px;
 }
 
 .articles__item:not(:nth-child(2n)) {
@@ -397,7 +405,7 @@ body {
 }
 
 .articles__wrapper-text {
-  padding: 30px;
+  padding: 20px 30px 30px;
 }
 
 .articles__text-time {
@@ -423,14 +431,14 @@ body {
 
 .clients__item {
   flex-direction: column;
-  width: 370px;
+  width: calc((100% - var(--gap) * 2) / 3);
   padding: 50px 36px 30px;
   border: 1px solid #e4e4e4;
   border-radius: 5px;
 }
 
 .clients__item:not(:nth-child(3n)) {
-  margin: 0 30px 0 0;
+  margin-right: var(--gap);
 }
 
 .clients__descr {
@@ -440,10 +448,10 @@ body {
 }
 
 .clients__user {
+  align-items: center;
   width: 100%;
   margin-top: auto;
-  padding-top: 28px;
-  align-items: center;
+  padding: 31px 0 0 5px;
   border-top: 1px solid #dadada;
 }
 
@@ -488,13 +496,13 @@ body {
 
 .contacts__item {
   flex-direction: column;
-  width: 370px;
+  width: calc((100% - var(--gap) * 2) / 3);
   padding-top: 50px;
   background-size: 29px 29px;
 }
 
 .contacts__item:not(:nth-child(3n)) {
-  margin: 0 30px 0 0;
+  margin: 0 var(--gap) 0 0;
 }
 
 .contacts__item_visit-us {
@@ -571,7 +579,7 @@ body {
   height: 60px;
 }
 
-.form__input:nth-child(-n+2) {
+.form__input:not(:last-child) {
   margin-bottom: 19px;
 }
 
@@ -645,8 +653,9 @@ body {
 
 .footer__container {
   justify-content: space-between;
-  padding: 45px 0;
   align-items: center;
+  padding-top: 47px;
+  padding-bottom: 47px;
 }
 
 .footer__left,
@@ -669,6 +678,10 @@ body {
 
 .footer__nav {
   margin-right: 55px;
+}
+
+.nav__link_color {
+  color: #787878;
 }
 
 .social__link {
