@@ -565,8 +565,13 @@ body {
   text-align: center;
 }
 
-.join-us__descr {
+.join-us__descr-desktop {
   margin: 0 0 30px;
+}
+
+.join-us__descr-mobile {
+  display: none;
+  margin: 0 0 37px;
 }
 
 .form__top {
@@ -693,8 +698,6 @@ body {
 .social__link {
   justify-content: center;
   align-items: center;
-  width: 24px;
-  height: 24px;
 }
 
 .social__link_linkedin svg,

@@ -132,10 +132,6 @@
 }
 
 @media (max-width: 576px) {
-  .contacts,
-  .footer {
-    display: none;
-  }
 
   /*global*/
 
@@ -281,18 +277,166 @@
   }
 
   .clients__list {
+    margin-bottom: -15px;
     flex-flow: column nowrap;
   }
 
   .clients__item {
+    margin: 0 0 15px;
     width: 100%;
   }
 
   .clients__user {
-    padding: 31px 0 0 0;
+    padding: 29px 0 0 0;
   }
 
   .clients__name {
+    margin-bottom: 3px;
     line-height: 1;
+  }
+
+  /*contacts*/
+
+  .contacts__title {
+    margin: 0 0 15px;
+  }
+
+  .contacts__list {
+    flex-direction: column;
+    justify-content: normal;
+  }
+
+  .contacts__item {
+    padding-top: 40px;
+    width: 100%;
+  }
+
+  .contacts__item:not(:nth-child(3n)) {
+    margin: 0;
+  }
+
+  .contacts__item:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  .contacts__subtitle {
+    margin: 0 0 13px;
+  }
+
+  /*join-us*/
+
+  .join-us__title {
+    margin: 0 0 14px;
+    text-align: left;
+  }
+
+  .join-us__descr-desktop {
+    display: none;
+  }
+
+  .join-us__descr-mobile {
+    display: block;
+    text-align: left;
+  }
+
+  .form__top {
+    flex-direction: column;
+    margin-bottom: 12px;
+  }
+
+  .form__left {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .form__input:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  .form-item-states {
+    padding: 15px 19px;
+  }
+
+  .form__right {
+    width: 100%;
+  }
+
+  .form__textarea {
+    min-height: 240px;
+  }
+
+  .form__bottom {
+    justify-content: center;
+  }
+
+  .form__bottom-wrapper {
+    width: 100%;
+  }
+
+  .form__btn {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  /*footer*/
+
+  .footer__container {
+    flex-direction: column-reverse;
+    padding-top: 29px;
+    padding-bottom: 13px;
+  }
+
+  .footer__right {
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  .footer__nav {
+    margin: 0 0 16px;
+  }
+
+  .footer__nav .nav__list {
+    flex-wrap: wrap;
+  }
+
+  .footer .nav__item:not(:last-child) {
+    margin: 0 30px 15px 0;
+  }
+
+  .social {
+    justify-content: flex-start;
+  }
+
+  .social__item:not(:last-child) {
+    margin-right: 32px;
+  }
+
+  .footer__left {
+    flex-direction: column;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .footer__logo {
+    align-self: flex-start;
+    margin: 0 0 43px;
+    width: 80px;
+  }
+
+  .footer__copyright {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer__copyright::before {
+    content: '';
+    position: absolute;
+    top: -17px;
+    left: -15px;
+    width: calc(100% + 30px);
+    height: 1px;
+    background-color: #c4c4c4;
   }
 }
