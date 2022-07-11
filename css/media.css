@@ -8,7 +8,67 @@
   /*header*/
 
   .header__nav {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 50px;
+    width: 50%;
+    min-width: 250px;
+    height: 100vh;
+    z-index: 2;
+    box-shadow: 0 0 5px #888;
+    background-color: #fff;
+    overflow-y: auto;
+    visibility: hidden;
+    transform: translateX(-120%);
+    transition: visibility 0.3s ease-in-out,
+                transform 0.3s ease-in-out;
+  }
+
+  .header__nav .nav__list {
+    flex-direction: column;
+  }
+
+  .header__nav .nav__item:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .nav__link {
+    font-size: 18px;
+  }
+
+  .header__nav_active {
+    visibility: visible;
+    transform: none;
+  }
+
+  .burger_active .burger__line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger_active .burger__line:first-child {
+    left: 25%;
+    top: 50%;
+    transform: rotate(45deg);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out,
+                top 0.3s ease-in-out,
+                left 0.3s ease-in-out;
+  }
+
+  .burger_active .burger__line:last-child {
+    left: 25%;
+    top: 50%;
+    transform: rotate(-45deg);
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out,
+    top 0.3s ease-in-out,
+    left 0.3s ease-in-out;
+  }
+
+  .stop-scroll {
+    overflow: hidden;
   }
 
   .header__btn {
@@ -135,6 +195,10 @@
 
   /*global*/
 
+  .body {
+    overflow-x: hidden;
+  }
+
   .section-offset {
     padding: 60px 0;
   }
@@ -238,12 +302,31 @@
     height: 191px;
   }
 
-  .articles__item:nth-child(-n+2) {
+  .articles__item:nth-child(n + 3) {
+    display: none;
+  }
+
+  .articles__item:nth-child(-n + 2) {
     margin-bottom: 0;
   }
 
   .articles__item:not(:last-child) {
     margin-bottom: 15px;
+  }
+
+  .articles__item.articles__item_visible {
+    display: block;
+  }
+
+  .articles__btn {
+    display: block;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .articles__btn_hidden {
+    display: none;
   }
 
   .articles__link {
@@ -401,6 +484,10 @@
 
   .footer .nav__item:not(:last-child) {
     margin: 0 30px 15px 0;
+  }
+
+  .footer .nav__link {
+    font-size: 15px;
   }
 
   .social {

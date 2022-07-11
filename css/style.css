@@ -428,6 +428,10 @@ body {
   max-width: 210px;
 }
 
+.articles__btn {
+  display: none;
+}
+
 /*clients*/
 
 .clients__title {
